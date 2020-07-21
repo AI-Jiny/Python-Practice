@@ -1,12 +1,11 @@
-a=input()
-#a = a.split(" ")
-#a = list(map(int, a))
-a = int(a)
-if a % 400 == 0 :
-    print("1")
-elif a % 100 == 0 :
-    print("0")
-elif a % 4 == 0 :
-    print("1")
+a = int(input())
+if 90<= a <= 100:
+    print("A")
+elif 80<= a <= 89:
+    print("B")
+elif 70<= a <= 79:
+    print("C")
+elif 60<= a <= 69:
+    print("D")
 else:
-    print("0")
+    print("F")
