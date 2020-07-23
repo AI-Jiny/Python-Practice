@@ -1,4 +1,6 @@
-a = input()
-for i in range(1,10):
-    a = int(a)
-    print("{} * {} = {}".format(a, i, i * a))
+while True:
+    try:
+        b = sum(list(map(int, input().split())))
+        print(b)
+    except:
+        break
