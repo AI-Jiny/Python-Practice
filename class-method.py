@@ -18,6 +18,10 @@ class TestClass():
     def add_tt2():
         TestClass.tt += 1
 
+class SubClass(TestClass):
+    tt: int = 100
+
+
 assert TestClass.get_tt_by_instance_method(None) == 0
 TestClass.add_tt()
 assert TestClass.get_tt_by_instance_method(None) == 1
@@ -33,8 +37,7 @@ TestClass.tt = 10
 assert TestClass.get_tt_by_instance_method(a1) == a1.get_tt_by_instance_method() == 10
 
 
-class SubClass(TestClass):
-    tt: int = 100
+
 
 ## 부모 클래스 변수 참조
 assert SubClass.get_tt_by_instance_method(None) == 10

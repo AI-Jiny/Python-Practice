@@ -1,18 +1,16 @@
 n, k = [int(x) for x in input().split()]
-arr = [1] * n
-N = len(arr)
 ordered_list = []
 
 size = 1
-while size < N:
+while size < n:
     size <<= 1
 tree = [0] * (2 * size)
 
-for i, x in enumerate(arr):
-    idx = size + i
-    while idx:
-        tree[idx] += x
-        idx //= 2
+for i in range(size, size + n):
+    tree[i] = 1
+
+for i in range(size - 1, 0, -1):
+    tree[i] = tree[i * 2] + tree[i * 2 + 1]
 
 def update(idx, value = 1):
     pos = idx + size
@@ -36,41 +34,33 @@ def query(left, right):
         right //= 2
     return res
 
-def search_idx(src, target):
-    left = src
-    right = N - 1
-
-
-    while left <= right:
-        if tree[right + size] and query(src, right) == target:
-            return right
-        mid = (left + right) // 2
-
-        #print(f"left: {left}, right: {right}, mid: {mid},value:{right+size}")
-
-        if target <= query(src, mid) :
-            right = mid
-        else:
-            left = mid + 1
-
 pos = 0
 
-while tree[1]:
+while all_total := tree[1]:
     count = None
     if k > tree[1]:
-        count = c if (c := k % tree[1]) else tree[1]
+        count = c if (c := k % tree[1]) else all_total
     else:
         count = k
-
-    if (gap := query(pos, N)) < count:
+    
+    if (gap := query(pos, n - 1)) < count:
         count -= gap
         pos = 0
-    #print(f"people: {tree[1]}, pos:{pos},count: {count}")
-    pos = search_idx(pos, count)
-    #print(f"pos: {pos}")
+    left_total = all_total - query(pos, n - 1)
+    target_count = left_total + count
+
+    target_idx = 1
+    while target_idx < size:
+        if tree[target_idx * 2] < target_count:
+            target_count -= tree[target_idx * 2]
+            target_idx = target_idx * 2 + 1
+        else:
+            target_idx *= 2
+    
+    pos = target_idx - size
     update(pos)
     ordered_list.append(str(pos + 1))
-    #print(ordered_list)
+
 
 answer = f"<{', '.join(ordered_list)}>"
 print(answer)
