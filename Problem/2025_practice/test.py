@@ -1,2 +1,3 @@
-print( 11 & 1)
-print( 12 & 1)
+l = [1,2, 3,4]
+l.pop(-2)
+print(l)
