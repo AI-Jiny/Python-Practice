@@ -4,7 +4,6 @@ class MyDeque(deque):
     def push(self, n):
         self.append(n)
         
-
     def pop(self):
         if len(self) == 0:
             return -1

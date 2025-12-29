@@ -1,2 +1,4 @@
-a = {1:1, 2:1}
-print(len(a))
+for i in range(4):
+    print(i)
+
+print(f"i:{i}")
