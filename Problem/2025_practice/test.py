@@ -1,4 +1,4 @@
-for i in range(4):
-    print(i)
-
-print(f"i:{i}")
+a = [1]
+ans = {}
+ans[a] = 1
+print(ans)
