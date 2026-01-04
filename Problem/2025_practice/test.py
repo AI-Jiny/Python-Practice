@@ -1,4 +1,2 @@
-a = [1]
-ans = {}
-ans[a] = 1
-print(ans)
+a = "123"
+print(a[0:4])
