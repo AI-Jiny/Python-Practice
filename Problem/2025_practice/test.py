@@ -1,2 +1,4 @@
-list_presum2 = [[0] * (4 + 1)]
-print(list_presum2)
+a = [1,2]
+
+for i,n in enumerate(a[1:]):
+    print(i, n)
