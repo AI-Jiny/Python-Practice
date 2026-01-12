@@ -1,20 +1,25 @@
 N = int(input())
 M = int(input())
-S = input()
-
-p = "IO" * N + "I"
-lenp = len(p)
+s = input()
 ans = 0
-idx_left = 0
-idx_right = lenp - 1
+k = 0
 
-if lenp <= M:
-    for i in range(M - idx_right):
-        if S[idx_left:idx_right + 1] == p:
-            ans += 1
-        
-        idx_left += 1
-        idx_right += 1
+idx = s.find("IOI")
+#while idx != -1 and idx + 2 < M:
+for _ in range(5):
+    print(idx)
+    if s[idx + 1: idx + 3] == "OI":
+        k += 1
+        idx += 2
+    else:
+        nidx = s[idx:].find("IOI")
+        if nidx == -1:
+            break
+        idx += nidx
+        k = 0
 
+    if k >= N:
+        ans += 1
 
 print(ans)
+
