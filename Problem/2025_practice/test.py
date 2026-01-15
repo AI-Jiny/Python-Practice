@@ -1,3 +1,3 @@
-for i in range(10):
-    print(i)
-    i += 1
+a = {1,2,3}
+a.discard(1)
+print(a)
