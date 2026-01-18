@@ -14,10 +14,8 @@ for i in range(1, N + 1):
     list_presum2.append(list_tmp)
 
 
-print(list_presum2)
 for q in list_q:
     x1, y1, x2, y2 = q
-    print(f"list_presum2[y2][x2]:{list_presum2[y2][x2]} - (list_presum2[y1][x2]:{list_presum2[y1][x2]} + list_presum2[y2][x1]::{list_presum2[y2][x1]}) + list_presum2[y1][x1]:{list_presum2[y1][x1]}")
     ans = list_presum2[x2][y2] - (list_presum2[x1 - 1][y2] + list_presum2[x2][y1 - 1]) + list_presum2[x1 - 1][y1 - 1]
     
     print(ans)
