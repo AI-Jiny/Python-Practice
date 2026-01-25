@@ -1,3 +1,5 @@
-a = [list()] * (5)
-a[0].append(1)
-print(a)
+import heapq
+
+a = []
+b = heapq.nlargest(1,a)
+print(b[-1])
