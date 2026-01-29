@@ -1,5 +1,13 @@
-import heapq
+import asyncio
 
-a = []
-b = heapq.nlargest(1,a)
-print(b[-1])
+class A:
+    def __await__(self):
+        yield 1
+        return 123
+
+async def f():
+    res = await A()
+    print(res)
+    return 1
+
+asyncio.run(f())
