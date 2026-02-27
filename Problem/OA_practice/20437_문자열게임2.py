@@ -6,12 +6,12 @@ for _ in range(t):
     alpha = {}
     res1 = 10000
     res2 = -1
+    flg = True
 
     for i, w in enumerate(word):
         t = alpha.get(w, [])
         t.append(i)
         alpha[w] = t
-        flg = True
 
     for k, v in alpha.items():
         l = len(v)
