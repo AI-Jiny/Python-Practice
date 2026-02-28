@@ -27,7 +27,7 @@ def union(parents, a, b):
 
 
 while True:
-    finput = input().split()
+    finput = input()
     if not finput:
         break
     m, n = map(int, finput.split())
