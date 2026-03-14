@@ -28,8 +28,7 @@ while hq:
             dp[nxt] = ncost
             heapq.heappush(hq, (ncost, nxt))
 
-print(graph)
-print(dp)
+print(dp[-1])
 
 # 6 8
 # 4 5 3

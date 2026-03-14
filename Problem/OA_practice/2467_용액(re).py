@@ -7,7 +7,6 @@ ans = (None, None)
 
 while left < right:
     s = l[left] + l[right]
-    print(l[left], l[right])
     if abs(s) < ans_sum:
         ans_sum = abs(s)
         ans = (l[left], l[right])

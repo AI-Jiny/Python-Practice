@@ -15,7 +15,7 @@ while True:
         total += line
 
     if total  <= max_line * 2:
-        ans.append("invalid")
+        ans.append("Invalid")
     elif len(line_set) == 1:
         ans.append("Equilateral")
     elif len(line_set) == 2:
