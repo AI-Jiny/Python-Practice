@@ -19,5 +19,5 @@ for i in range(n):
     
     ans[i] = rank
 
-ans = " ".join([str[x] for x in ans])
+ans = " ".join([str(x) for x in ans])
 print(ans)
