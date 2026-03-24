@@ -12,8 +12,6 @@ if sum(budgets) <= limit:
 
 while left < right:
     mid = (left + right) // 2
-
-    print(left, mid, right)
     total = 0
     for b in budgets:
         if b > mid:
@@ -25,7 +23,6 @@ while left < right:
     else:
         ans = mid
         left = mid + 1
-    print(total)
 print(ans)
 
 # 4
