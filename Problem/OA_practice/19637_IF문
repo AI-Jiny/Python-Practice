@@ -1,0 +1,18 @@
+import sys
+import bisect
+
+input = sys.stdin.readline
+
+N, M = map(int, input().split())
+
+titles = []
+powers = []
+for _ in range(N):
+    title, power = input().split()
+    titles.append(title)
+    powers.append(int(power))
+    
+characters = [int(input()) for _ in range(M)]
+for character in characters:
+    idx = bisect.bisect_left(powers, character)
+    print(titles[idx])
