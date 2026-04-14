@@ -31,7 +31,6 @@ else:
             ans = cur_cnt
         if ans == K + 1:
             break
-        print(window)
     print(ans)        
     
 
@@ -45,3 +44,4 @@ else:
 # 7
 # 9
 # 25
+# 0 1 2 3 / 0 1 
