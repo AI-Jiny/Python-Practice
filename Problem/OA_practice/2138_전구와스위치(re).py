@@ -21,10 +21,16 @@ for i in range(1, N):
             start_d[i + 1] ^= True
         ans_2 += 1
 
+ans = []
+
 if start[-1] == end[-1]:
-    print(ans_1)
-elif start_d[-1] == end[-1]:
-    print(ans_2)
+    ans.append(ans_1)
+if start_d[-1] == end[-1]:
+    ans.append(ans_2)
+
+if ans:
+    print(min(ans))
 else:
     print(-1)
+    
 
